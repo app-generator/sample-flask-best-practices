@@ -6,5 +6,5 @@
 
 <blockquote>Features:</blockquote>
 <ul>
-  <li>Up-to-date <a href="/app-generator/sample-flask-best-practices/blob/main/requirements.txt">dependencies</a>: Flask 2.1.1</li>
+  <li>Up-to-date <a href="requirements.txt">dependencies</a>: Flask 2.1.1</li>
 </ul>
