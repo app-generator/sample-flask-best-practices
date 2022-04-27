@@ -16,11 +16,13 @@ login_manager.login_view = 'auth.signin'
 def create_app(config_name):
     """For to use dynamic environment"""
     app = Flask(__name__)
-    security = setup_security_measure_on_application(app)
     app.config.from_object(config[config_name])
+    security = setup_security_measure_on_application(app)
+
 
     db.init_app(app)
     login_manager.init_app(app)
     return app, security
 
 app, security = create_app("development")
+print(app.config)
