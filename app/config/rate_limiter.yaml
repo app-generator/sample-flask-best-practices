@@ -1,0 +1,3 @@
+RATE_LIMITER_OPTS:
+  - "200 per day"
+  - "50 per hour"
