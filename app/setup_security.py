@@ -1,5 +1,4 @@
 from flask_limiter import Limiter
-from flask_seasurf import SeaSurf
 from flask_talisman import Talisman
 from flask_limiter.util import get_remote_address
 
@@ -11,7 +10,6 @@ def setup_security_measure_on_application(app):
     :return: all the protection measure applied on the app
     """
     return {
-        "csrf": SeaSurf(app),
         "limiter": Limiter(app,
                            key_func=get_remote_address,
                            default_limits=app.config['RATE_LIMITER_OPTS']),

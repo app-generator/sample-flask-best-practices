@@ -1,0 +1,19 @@
+{% extends "bootstrap/bs5_base.html" %}
+{% block title %}
+  {% if title %}
+    {{ title }}
+  {% else %}
+    Flask Basic Login/Register example \w Bootstrap5
+  {% endif %}
+{% endblock %}
+
+{% block navbar %}
+  {% include 'navbar/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+  <div class="container mt-3">
+    {% block app_content %}
+    {% endblock %}
+  </div>
+{% endblock %}

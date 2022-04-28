@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #274e68;">
+  <div class="container">
+    <a class="navbar-brand" href="{{ url_for('auth.login') }}">Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item {% if request.path == url_for('auth.login') %}active{% endif %}">
+          <a class="nav-link" href="{{ url_for('auth.login') }}">Home</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        {% if current_user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('auth.logout') }}">Log Out</a>
+        </li>
+        {% else %}
+        <li class="nav-item {% if request.path == url_for('auth.login') %}active{% endif %}">
+          <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+        </li>
+        <li class="nav-item {% if request.path == url_for('auth.register') %}active{% endif %}">
+          <a class="nav-link" href="{{ url_for('auth.register') }}">Register</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

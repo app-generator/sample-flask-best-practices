@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% import 'forms/forms.html' as wtf %}
+
+{% block app_content %}
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      {% include 'navbar/messages.html' %}
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1>Register New User</h1>
+      <hr>
+      {{ wtf.quick_form(form, button_map={'submit': 'secondary'}) }}
+    </div>
+  </div>
+{% endblock %}

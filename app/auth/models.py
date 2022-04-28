@@ -1,3 +1,4 @@
+from app import db
 from flask_login import UserMixin
 from sqlalchemy.orm.exc import NoResultFound
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -7,7 +8,6 @@ class User(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(50), nullable=False)
-    name = db.Column(db.String(128), nullable=False)
     email = db.Column(db.String(128), nullable=False, unique=True)
     password = db.Column(db.String(54), nullable=False)
     active = db.Column(db.SmallInteger, nullable=False, default=True)
@@ -15,9 +15,8 @@ class User(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, default=db.func.now())
     updated_at = db.Column(db.DateTime, onupdate=db.func.now())
 
-    def __init__(self, username, name, email, password):
+    def __init__(self, username, email, password):
         self.username = username
-        self.name = name
         self.email = email
         self.set_password(password)
 
