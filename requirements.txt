@@ -1,3 +1,4 @@
+Bootstrap-Flask==2.0.2
 click==8.1.2
 colorama==0.4.4
 commonmark==0.9.1
@@ -22,3 +23,4 @@ SQLAlchemy==1.4.36
 typing_extensions==4.2.0
 Werkzeug==2.1.1
 wrapt==1.14.0
+WTForms==3.0.1

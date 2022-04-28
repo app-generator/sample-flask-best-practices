@@ -10,7 +10,6 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(128), nullable=False)
     email = db.Column(db.String(128), nullable=False, unique=True)
     password = db.Column(db.String(54), nullable=False)
-    level = db.Column(db.Integer, nullable=False, default=10)
     active = db.Column(db.SmallInteger, nullable=False, default=True)
 
     created_at = db.Column(db.DateTime, default=db.func.now())

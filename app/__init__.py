@@ -1,6 +1,7 @@
 from flask import Flask
 from app.config import config
 from flask_login import LoginManager
+from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from app.setup_security import setup_security_measure_on_application
 
@@ -22,7 +23,7 @@ def create_app(config_name):
 
     db.init_app(app)
     login_manager.init_app(app)
+    bootstrap = Bootstrap5(app)
     return app, security
 
 app, security = create_app("development")
-print(app.config)
