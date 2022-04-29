@@ -10,12 +10,12 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | --- | --- | --- |
 | ✔️ | `Up-to-date Dependencies` | - |
 | ✔️ | Flask-Login, Flask-SqlAlchemy | - |
-| ❌ | BS5 for styling | - |
+| ❌ | BS5 for styling | Local path (latest BS5 stable version) |
 | ❌ | Simple Custom Login / Register pages | - | 
 | ❌ | Unitary tests | - |
 | ❌ | SCSS to CSS compilation | - |
 | ❌ | Flask-RateLimiter for login & register | - |
-| ❌ | Flask-Talisman | - |
+| ❌ | Flask-Talisman | Default policy |
 | ❌ | Passwords Checks: max/min password length | - |
 | ❌ | Strong password check | - |
 | ❌ | Page Compression | - |
