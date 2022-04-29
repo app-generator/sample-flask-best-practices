@@ -38,8 +38,7 @@ def create_app(config_name):
     db.init_app(app)
     login_manager.init_app(app)
     bootstrap.init_app(app)
-    csrf.init_app(app)
-
+    csrf.init_app(app) 
 
     from app.auth.routes import auth
     app.register_blueprint(auth)
