@@ -2,6 +2,9 @@
 
 A simple `Flask` codebase that provides best practices for a secure production deployment.
 
+> Status: **WIP** (not stable)
+
+<br />
 <br />
 
 > Checklist 
