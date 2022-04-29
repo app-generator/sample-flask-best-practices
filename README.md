@@ -12,7 +12,6 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | Status | Item | info | 
 | --- | --- | --- |
 | ✔️ | `Up-to-date Dependencies` | - |
-| ❌ | Deployment | [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/) / Nginx (reverse proxy) | 
 | ✔️ | Flask-Login, Flask-SqlAlchemy | - |
 | ❌ | BS5 for styling | Local path (latest BS5 stable version) |
 | ❌ | Simple Custom Login / Register pages | - | 
@@ -26,6 +25,7 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | ❌ | Failed Logins Count | - |
 | ❌ | Account Suspension for X failed logins | Limit in Config |
 | ❌ | Page Compression | via [Flask-Minify](https://pypi.org/project/Flask-Minify/) |
+| ❌ | Deployment | [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/) / Nginx (reverse proxy) | 
 | ❌ | HEROKU integration | - |
 | ❌ | Docker | - |
 
