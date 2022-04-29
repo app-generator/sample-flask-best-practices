@@ -5,6 +5,8 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config(object):
+    SECRET_KEY = os.environ.get('SECRET_KEY') or '7soino32noonN@^#iuiuw9'
+
     DATABASE_CONNECT_OPTIONS = {}
 
     # Turn off Flask-SQLAlchemy event system
@@ -30,6 +32,16 @@ class Config(object):
         SECRET_KEY = 'SECRET'
 
     RATE_LIMITER_OPTS = [ '200 per day', '50 per hour']
+
+    # Mail Configuration
+    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = True
+    MAIL_USERNAME = 'you-will-never-guess@gmail.com'
+    MAIL_PASSWORD = 'you-will-never-guess'
+
+    # ADMINS
+    ADMINS = ['admin@gmail.com']
 
     @staticmethod
     def init_app(app):

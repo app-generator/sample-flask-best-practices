@@ -1,4 +1,7 @@
+import jwt
 from app import db
+from time import time
+from flask import current_app
 from flask_login import UserMixin
 from sqlalchemy.orm.exc import NoResultFound
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -28,6 +31,18 @@ class User(db.Model, UserMixin):
 
     def check_password(self, password):
         return check_password_hash(self.password, password)
+
+    def get_reset_password_token(self, expires_in=600):
+        """
+        This function generates a time based expiration jwt that is used in the reset password scenario,
+        incase if user does not use link in defined time the link would expire
+        :param expires_in: time in which the jwt expires
+        :return: web token
+        """
+        return jwt.encode({'reset_password': self.id,
+                           'exp': time() + expires_in},
+                          current_app.config['SECRET_KEY'],
+                          algorithm='HS256').decode('utf-8')
 
     @classmethod
     def get(cls, user_id):

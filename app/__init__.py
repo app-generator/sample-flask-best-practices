@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_mail import Mail
 from app.config import config
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -27,6 +28,9 @@ csrf = CSRFProtect()
 # Security Measures dict initially None
 security = None
 
+# Setup mailer
+mail = Mail()
+
 def create_app(config_name):
     """For to use dynamic environment"""
     global security
@@ -38,7 +42,8 @@ def create_app(config_name):
     db.init_app(app)
     login_manager.init_app(app)
     bootstrap.init_app(app)
-    csrf.init_app(app) 
+    csrf.init_app(app)
+    mail.init_app(app)
 
     from app.auth.routes import auth
     app.register_blueprint(auth)
