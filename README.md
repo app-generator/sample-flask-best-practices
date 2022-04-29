@@ -12,7 +12,7 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | Status | Item | info | 
 | --- | --- | --- |
 | ✔️ | `Up-to-date Dependencies` | - |
-| ❌ | Production Deployment | uWSGI / Nginx (reverse proxy) | 
+| ❌ | Deployment | [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/) / Nginx (reverse proxy) | 
 | ✔️ | Flask-Login, Flask-SqlAlchemy | - |
 | ❌ | BS5 for styling | Local path (latest BS5 stable version) |
 | ❌ | Simple Custom Login / Register pages | - | 
