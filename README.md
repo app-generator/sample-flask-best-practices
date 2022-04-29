@@ -13,15 +13,15 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | --- | --- | --- |
 | ✔️ | `Up-to-date Dependencies` | - |
 | ✔️ | Flask-Login, Flask-SqlAlchemy | - |
-| ❌ | BS5 for styling | Local path (latest BS5 stable version) |
+| ✔️ | BS5 for styling | Local path (latest BS5 stable version) |
 | ✔️ | Simple Custom Login / Register pages | - | 
-| ❌ | Password Recovery | - | 
+| ✔️ | Password Recovery | - | 
 | ❌ | Unitary tests | - |
 | ❌ | SCSS to CSS compilation | via Gulp |
 | ✔️ | Rate Limiter for Login & Register | via [Flask-RateLimiter](https://pypi.org/project/Flask-RateLimiter/) |
 | ✔️ | [Flask-Talisman](https://pypi.org/project/flask-talisman/) | Default policy |
 | ❌ | Passwords Checks | Configurable Min/Max Lenght, Strength |
-| ❌ | Check email is valid & exists | via [validate-email-address](https://pypi.org/project/validate-email-address/) package |
+| ✔️ | Check email is valid & exists | via [validate-email-address](https://pypi.org/project/validate-email-address/) package |
 | ❌ | Failed Logins Count | - |
 | ❌ | Account Suspension for X failed logins | Limit in Config |
 | ❌ | Page Compression | via [Flask-Minify](https://pypi.org/project/Flask-Minify/) |
