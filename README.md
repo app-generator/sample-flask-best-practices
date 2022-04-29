@@ -17,8 +17,8 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | ❌ | Simple Custom Login / Register pages | - | 
 | ❌ | Unitary tests | - |
 | ❌ | SCSS to CSS compilation | via Gulp |
-| ❌ | Rate Limiter for Login & Register | via [Flask-RateLimiter](https://pypi.org/project/Flask-RateLimiter/) |
-| ❌ | [Flask-Talisman](https://pypi.org/project/flask-talisman/) | Default policy |
+| ✔️ | Rate Limiter for Login & Register | via [Flask-RateLimiter](https://pypi.org/project/Flask-RateLimiter/) |
+| ✔️ | [Flask-Talisman](https://pypi.org/project/flask-talisman/) | Default policy |
 | ❌ | Passwords Checks | Configurable Min/Max Lenght, Strength |
 | ❌ | Check email is valid & exists | via [validate-email-address](https://pypi.org/project/validate-email-address/) package |
 | ❌ | Page Compression | via [Flask-Minify](https://pypi.org/project/Flask-Minify/) |
