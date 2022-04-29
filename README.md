@@ -25,7 +25,7 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | ❌ | Failed Logins Count | - |
 | ❌ | Account Suspension for X failed logins | Limit in Config |
 | ❌ | Page Compression | via [Flask-Minify](https://pypi.org/project/Flask-Minify/) |
-| ❌ | Deployment | [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/) / Nginx (reverse proxy) | 
+| ✔️ | Deployment | [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/) / Nginx (reverse proxy) | 
 | ❌ | HEROKU integration | - |
 | ✔️ | Docker | - |
 
