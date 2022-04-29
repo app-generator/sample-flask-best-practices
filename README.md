@@ -13,12 +13,12 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | ❌ | BS5 for styling | Local path (latest BS5 stable version) |
 | ❌ | Simple Custom Login / Register pages | - | 
 | ❌ | Unitary tests | - |
-| ❌ | SCSS to CSS compilation | - |
+| ❌ | SCSS to CSS compilation | via Gulp |
 | ❌ | Flask-RateLimiter for login & register | - |
 | ❌ | Flask-Talisman | Default policy |
 | ❌ | Passwords Checks: max/min password length | - |
 | ❌ | Strong password check | - |
-| ❌ | Check email is valid & exists | Via [validate-email-address](https://pypi.org/project/validate-email-address/) package |
+| ❌ | Check email is valid & exists | via [validate-email-address](https://pypi.org/project/validate-email-address/) package |
 | ❌ | Page Compression | via [Flask-Minify](https://pypi.org/project/Flask-Minify/) |
 | ❌ | HEROKU integration | - |
 | ❌ | Docker | - |
