@@ -1,6 +1,6 @@
 # Flask Best Practices
 
-A simple `Flask` codebase that provides best security practices for a secure production deployment. 
+A simple `Flask` codebase that provides best practices for a secure production deployment.
 
 <br />
 
@@ -10,8 +10,8 @@ A simple `Flask` codebase that provides best security practices for a secure pro
 | --- | --- | --- |
 | ✔️ | `Up-to-date Dependencies` | - |
 | ✔️ | Flask-Login, Flask-SqlAlchemy | - |
-| ❌ | Simple Custom Login / Register pages | - | 
 | ❌ | BS5 for styling | - |
+| ❌ | Simple Custom Login / Register pages | - | 
 | ❌ | Unitary tests | - |
 | ❌ | SCSS to CSS compilation | - |
 | ❌ | Flask-RateLimiter for login & register | - |
@@ -21,8 +21,6 @@ A simple `Flask` codebase that provides best security practices for a secure pro
 | ❌ | Page Compression | - |
 | ❌ | HEROKU integration | - |
 | ❌ | Docker | - |
-
-<br />
 
 <br />
 
@@ -70,7 +68,7 @@ $ # Access the app in browser: http://127.0.0.1:5000/
 
 The project has a super simple structure, represented as bellow:
 
-@todo
+> **@ToDo**
 
 <br />
 
@@ -78,7 +76,9 @@ The project has a super simple structure, represented as bellow:
 
 To recompile SCSS files, follow this setup:
 
+> **@ToDo**
+
 <br />
 
 --- 
-Flask Best Practices - Provided by AppSeed
+**Flask Best Practices** - Provided by AppSeed
