@@ -14,7 +14,7 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | ✔️ | `Up-to-date Dependencies` | - |
 | ✔️ | Flask-Login, Flask-SqlAlchemy | - |
 | ❌ | BS5 for styling | Local path (latest BS5 stable version) |
-| ❌ | Simple Custom Login / Register pages | - | 
+| ✔️ | Simple Custom Login / Register pages | - | 
 | ❌ | Password Recovery | - | 
 | ❌ | Unitary tests | - |
 | ❌ | SCSS to CSS compilation | via Gulp |
