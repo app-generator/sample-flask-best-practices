@@ -18,7 +18,8 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | ❌ | Flask-Talisman | Default policy |
 | ❌ | Passwords Checks: max/min password length | - |
 | ❌ | Strong password check | - |
-| ❌ | Page Compression | - |
+| ❌ | Check email is valid & exists | Via [validate-email-address](https://pypi.org/project/validate-email-address/) package |
+| ❌ | Page Compression | via [Flask-Minify](https://pypi.org/project/Flask-Minify/) |
 | ❌ | HEROKU integration | - |
 | ❌ | Docker | - |
 
