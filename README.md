@@ -1,10 +1,28 @@
-# sample-flask-best-practices
-<blockquote> Sample template for creating a simple session based auth application using <a href="https://flask.palletsprojects.com/en/2.1.x/">Flask</a> </blockquote>
+# Flask Best Practices
+
+A simple `Flask` codebase that provides best security practices for a secure production deployment. 
+
 <br />
-<blockquote>Features:</blockquote>
-<ul>
-  <li> Up-to-date <a href="requirements.txt">dependencies</a>: Flask 2.1.1 </li>
-  <li> Render Engine: Flask / Jinja2 </li>
-  <li> Deployment scripts: Docker, HEROKU </li>
-  <li> Support via <strong>Github</strong> (issues tracker) and <a href="https://discord.gg/fZC6hup" rel="nofollow">Discord</a>. </li>
-</ul>
+
+> Checklist 
+
+| Status | Item | info | 
+| --- | --- | --- |
+| ✔️ | `Up-to-date Dependencies` | - |
+| ✔️ | Flask-Login, Flask-SqlAlchemy | - |
+| ❌ | Simple Custom Login / Register pages | - | 
+| ❌ | BS5 for styling | - |
+| ❌ | Unitary tests | - |
+| ❌ | SCSS to CSS compilation | - |
+| ❌ | Flask-RateLimiter for login & register | - |
+| ❌ | Flask-Talisman | - |
+| ❌ | Passwords Checks: max/min password length | - |
+| ❌ | Strong password check | - |
+| ❌ | Page Compression | - |
+| ❌ | HEROKU integration | - |
+| ❌ | Docker | - |
+
+<br />
+
+--- 
+Flask Best Practices - Provided by AppSeed
