@@ -74,6 +74,7 @@ $ # Access the app in browser: http://127.0.0.1:5000/
 ## ✨ Code-base structure
 
 The project has a super simple structure, represented as below:
+```
 < PROJECT ROOT >
    |
    |-- app/
@@ -141,8 +142,8 @@ The project has a super simple structure, represented as below:
    |-- run.py
    |
    |-- ************************************************************************
+```
   
-
 > **@ToDo**
 
 <br />
