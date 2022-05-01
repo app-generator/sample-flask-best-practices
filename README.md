@@ -22,7 +22,7 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | ✔️ | [Flask-Talisman](https://pypi.org/project/flask-talisman/) | Default policy |
 | ❌ | Passwords Checks | Configurable Min/Max Lenght, Strength |
 | ✔️ | Check email is valid & exists | via [validate-email-address](https://pypi.org/project/validate-email-address/) package |
-| ❌ | Failed Logins Count | - |
+| ✔️ | Failed Logins Count | - |
 | ❌ | Account Suspension for X failed logins | Limit in Config |
 | ✔️ | Page Compression | via [Flask-Minify](https://pypi.org/project/Flask-Minify/) |
 | ✔️ | Deployment | [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/) / Nginx (reverse proxy) | 
