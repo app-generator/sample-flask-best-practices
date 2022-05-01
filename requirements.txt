@@ -1,6 +1,7 @@
 bcrypt==3.2.0
 blinker==1.4
 Bootstrap-Flask==2.0.2
+cachelib==0.6.0
 cffi==1.15.0
 click==8.1.2
 colorama==0.4.4
@@ -15,6 +16,7 @@ Flask-Login==0.6.0
 Flask-Mail==0.9.1
 Flask-Minify==0.39
 Flask-SeaSurf==1.1.1
+Flask-Session==0.4.0
 Flask-SQLAlchemy==2.5.1
 flask-talisman==1.0.0
 Flask-WTF==1.0.1

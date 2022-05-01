@@ -1,10 +1,9 @@
 import jwt
-from app import db
+from app import db, bcrypt
 from time import time
 from flask import current_app
 from flask_login import UserMixin
 from sqlalchemy.orm.exc import NoResultFound
-from werkzeug.security import check_password_hash, generate_password_hash
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
@@ -17,6 +16,7 @@ class User(db.Model, UserMixin):
 
     created_at = db.Column(db.DateTime, default=db.func.now())
     updated_at = db.Column(db.DateTime, onupdate=db.func.now())
+    suspended = db.Column(db.Boolean, default=False)
 
     def __init__(self, username, email, password):
         self.username = username
@@ -27,10 +27,10 @@ class User(db.Model, UserMixin):
         return '<User %s>' % self.username
 
     def set_password(self, password):
-        self.password = generate_password_hash(password)
+        self.password = bcrypt.generate_password_hash(password)
 
     def check_password(self, password):
-        return check_password_hash(self.password, password)
+        return bcrypt.check_password_hash(self.password, password)
 
     def get_reset_password_token(self, expires_in=600):
         """

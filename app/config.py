@@ -43,6 +43,10 @@ class Config(object):
     # ADMINS
     ADMINS = ['admin@gmail.com']
 
+    # Session API config
+    SESSION_PERMANENT = False
+    SESSION_TYPE = "filesystem"
+
     @staticmethod
     def init_app(app):
         pass

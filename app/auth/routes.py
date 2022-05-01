@@ -1,8 +1,8 @@
 from is_safe_url import is_safe_url
 from flask_login import login_user, logout_user, current_user
-from flask import Blueprint, render_template, request, flash, redirect, url_for, abort
+from flask import Blueprint, render_template, request, flash, redirect, url_for, abort, session
 
-from app import bcrypt, db, login_manager, security
+from app import bcrypt, db, security, login_manager
 
 from app.auth.models import User
 from flask_talisman import Talisman, ALLOW_FROM
@@ -13,8 +13,13 @@ from app.auth.forms import LoginForm, RegisterForm, ResetPasswordRequestForm, Re
 from app.utils import _log_message_
 auth = Blueprint('auth', __name__)
 
-
 @login_manager.user_loader
+def load_user(user_id):
+    try:
+        return User.query.get(user_id)
+    except:
+        return None
+
 @auth.route('/login',
             methods=['GET', 'POST'])
 @security["talisman"](frame_options=ALLOW_FROM,
@@ -31,19 +36,29 @@ def login():
     if current_user.is_authenticated:
         return redirect(url_for('main.index'))
     form = LoginForm(request.form)
+    attempt = session.get('attempt',None)
     if form.validate_on_submit():
         username = form.username.data
         password = form.password.data
         remember = form.remember.data
         user = User.query.filter_by(username=username).first()
-        if bcrypt.check_password_hash(user.password, password):
+        if user.check_password(password):
             login_user(user, remember=remember)
             next_ = request.args.get('next')
-            if not is_safe_url(next):
+            if not is_safe_url(next_,allowed_hosts='*'):
                 return abort(400)
             else:
                 return redirect(next_ or url_for('main.index'))
         else:
+            if (attempt == 0) or (attempt is None):
+                session['attempt'] = 5
+            else:
+                attempt -= 1
+                session['attempt'] = attempt
+                if attempt == 1:
+                    client_ip = request.remote_addr
+                    flash('This is your last attempt, %s will be blocked for 24hr, Attempt %d of 5' % (
+                    client_ip, attempt), 'error')
             flash('Password incorrect', category='danger')
     return render_template('auth/login.html', form=form)
 
@@ -73,12 +88,12 @@ def register():
     form = RegisterForm(request.form)
     if form.validate_on_submit():
         username = form.username.data
-        password = bcrypt.generate_password_hash(form.password.data)
+        password = form.password.data
         email = form.email.data
         user = User(username=username,
                     password=password,
                     email=email)
-        if validate_email(email, verify=True):
+        if validate_email(email):#, verify=True
             db.session.add(user)
             db.session.commit()
         else:
