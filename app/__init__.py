@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_mail import Mail
 from app.config import config
+from flask_minify import Minify
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_bootstrap import Bootstrap5
@@ -44,6 +45,7 @@ def create_app(config_name):
     bootstrap.init_app(app)
     csrf.init_app(app)
     mail.init_app(app)
+    Minify(app=app, html=True, js=True, cssless=True)
 
     from app.auth.routes import auth
     app.register_blueprint(auth)
