@@ -9,8 +9,8 @@ from flask_talisman import Talisman, ALLOW_FROM
 from validate_email_address import validate_email
 from app.auth.email import send_password_reset_email
 from app.auth.forms import LoginForm, RegisterForm, ResetPasswordRequestForm, ResetPasswordForm
-
 from app.utils import _log_message_
+
 auth = Blueprint('auth', __name__)
 
 @login_manager.user_loader
