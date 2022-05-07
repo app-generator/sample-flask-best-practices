@@ -18,7 +18,7 @@ jobs:
         DOCKERFILE_DIRECTORY: "."
         HEROKU_EMAIL: ravi01prasad@gmail.com
         HEROKU_API_KEY: 6c636e57-426c-4db5-99c4-d18f3f2b1706
-        DOCKERFILE_NAME: "DockerfileWFA"
+        DOCKERFILE_NAME: "Dockerfile"
         DOCKER_OPTIONS: "--no-cache"
       run: |
         cd ${DOCKERFILE_DIRECTORY}
@@ -29,6 +29,6 @@ jobs:
         docker build \
           --file ${DOCKERFILE_NAME} \
           ${DOCKER_OPTIONS} \
-          --tag registry.heroku.com/${HEROKU_APP_NAME}/worker .
-        heroku container:push worker --app ${HEROKU_APP_NAME}
-        heroku container:release worker --app ${HEROKU_APP_NAME}
+          --tag registry.heroku.com/${HEROKU_APP_NAME}/web .
+        heroku container:push web --app ${HEROKU_APP_NAME}
+        heroku container:release web --app ${HEROKU_APP_NAME}
