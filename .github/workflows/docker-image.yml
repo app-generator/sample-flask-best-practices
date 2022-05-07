@@ -1,0 +1,37 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+    - uses: actions/checkout@v2
+    - name: Build and push Docker to Heroku
+      env:
+        HEROKU_APP_NAME: testapp00083772
+        DOCKERFILE_DIRECTORY: "."
+        HEROKU_EMAIL: ravi01prasad@gmail.com
+        HEROKU_API_KEY: 6c636e57-426c-4db5-99c4-d18f3f2b1706
+        DOCKERFILE_NAME: "Dockerfile"
+        DOCKER_OPTIONS: "--no-cache"
+      run: |
+        cd ${DOCKERFILE_DIRECTORY}
+        echo ${HEROKU_API_KEY} | docker login \
+          --username=${HEROKU_EMAIL} \
+          registry.heroku.com \
+          --password-stdin
+        docker build \
+          --file ${DOCKERFILE_NAME} \
+          ${DOCKER_OPTIONS} \
+          --tag registry.heroku.com/${HEROKU_APP_NAME}/web .
+        heroku container:push web --app ${HEROKU_APP_NAME}
+        heroku container:release web --app ${HEROKU_APP_NAME}
