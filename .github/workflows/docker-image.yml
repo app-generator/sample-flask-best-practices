@@ -29,6 +29,6 @@ jobs:
         docker build \
           --file ${DOCKERFILE_NAME} \
           ${DOCKER_OPTIONS} \
-          --tag registry.heroku.com/${HEROKU_APP_NAME}/web .
-        heroku container:push web --app ${HEROKU_APP_NAME}
-        heroku container:release web --app ${HEROKU_APP_NAME}
+          --tag registry.heroku.com/${HEROKU_APP_NAME}/worker .
+        heroku container:push worker --app ${HEROKU_APP_NAME}
+        heroku container:release worker --app ${HEROKU_APP_NAME}
