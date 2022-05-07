@@ -29,3 +29,5 @@ jobs:
         docker-compose up -d
         heroku container:push web --app ${HEROKU_APP_NAME}
         heroku container:release web --app ${HEROKU_APP_NAME}
+        heroku container:push nginx --app ${HEROKU_APP_NAME}
+        heroku container:release nginx --app ${HEROKU_APP_NAME}
