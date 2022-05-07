@@ -11,6 +11,7 @@ services:
     expose:
       - "5000"
   nginx:
+    image: registry.heroku.com/testapp00083772/web
     restart: always
     build:
       context: ./nginx
