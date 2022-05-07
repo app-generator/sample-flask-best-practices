@@ -30,5 +30,6 @@ jobs:
           --file ${DOCKERFILE_NAME} \
           ${DOCKER_OPTIONS} \
           --tag registry.heroku.com/${HEROKU_APP_NAME}/web .
+        heroku ps:scale web=1
         heroku container:push web --app ${HEROKU_APP_NAME}
         heroku container:release web --app ${HEROKU_APP_NAME}
