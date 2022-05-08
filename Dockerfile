@@ -9,4 +9,4 @@ RUN pip install -r requirements.txt
 RUN pip install uwsgi
 # CMD [ "python", "run.py"]
 # CMD [ "uwsgi", "--socket", "0.0.0.0:5000", "--protocol", "http", "--wsgi", "run:app" ]
-CMD [ "uwsgi", "--socket", "0.0.0.0:5000", "--protocol", "http-socket", "--wsgi", "run:app" ]
+CMD [ "uwsgi", "--http-socket", "5000", "--wsgi", "run:app" ]
