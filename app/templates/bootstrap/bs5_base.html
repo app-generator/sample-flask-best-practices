@@ -15,6 +15,7 @@
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- My Style -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/password.css') }}" rel="stylesheet">
     {%- endblock styles %}
     {%- endblock head %}
   </head>
@@ -28,6 +29,9 @@
     {% block scripts %}
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/password.js') }}"></script>
+    {% block page_script -%}
+    {%- endblock page_script %}
     {%- endblock scripts %}
     {%- endblock body %}
   </body>
