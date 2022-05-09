@@ -20,7 +20,7 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | ❌ | SCSS to CSS compilation | via Gulp |
 | ✔️ | Rate Limiter for Login & Register | via [Flask-RateLimiter](https://pypi.org/project/Flask-RateLimiter/) |
 | ✔️ | [Flask-Talisman](https://pypi.org/project/flask-talisman/) | Default policy |
-| ❌ | Passwords Checks | Configurable Min/Max Lenght, Strength WIP |
+| ✔️ | Passwords Checks | Configurable Min/Max Lenght, Strength WIP |
 | ✔️ | Check email is valid & exists | via [validate-email-address](https://pypi.org/project/validate-email-address/) package |
 | ✔️ | Failed Logins Count | - |
 | ❌ | Account Suspension for X failed logins | Limit in Config |
