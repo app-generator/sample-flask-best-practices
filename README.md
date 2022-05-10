@@ -26,7 +26,7 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | ❌ | Account Suspension for X failed logins | Limit in Config |
 | ✔️ | Page Compression | via [Flask-Minify](https://pypi.org/project/Flask-Minify/) |
 | ✔️ | Deployment | [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/) / Nginx (reverse proxy) | 
-| ❌ | HEROKU integration |  PARTIAL WIP TODO: app is crashing on heroku | 
+| ✔️ | HEROKU integration |  PARTIAL WIP TODO: app is crashing on heroku | 
 | ✔️ | Docker | - |
 
 <br />
