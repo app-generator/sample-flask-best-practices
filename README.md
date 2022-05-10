@@ -77,10 +77,9 @@ $ # Run using docker-compose
 $ docker-compose build  # This will build the containers
 $ docker-compose up     # This will bring up the application
 $ # Open the application on you browser using you IPv4 Address on your browser i.e., only 2 routes available for auth /login ,/register
-</br>
+```
 
 ## ✨ Code-base structure
-
 The project has a super simple structure, represented as below:
 ```
 < PROJECT ROOT >
