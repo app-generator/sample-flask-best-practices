@@ -71,7 +71,6 @@ $ # Access the app in browser: http://127.0.0.1:5000/
 
 <br />
 
-<br>
 ## ✨ Build from docker
 ```bash
 $ # Run using docker-compose
