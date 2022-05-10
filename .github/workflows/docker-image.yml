@@ -16,4 +16,3 @@ jobs:
           heroku_api_key: 6c636e57-426c-4db5-99c4-d18f3f2b1706
           heroku_app_name: "testapp00083772"
           heroku_email: "ravi01prasad@gmail.com"
-          usedocker: true
