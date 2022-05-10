@@ -78,8 +78,17 @@ $ docker-compose build  # This will build the containers
 $ docker-compose up     # This will bring up the application
 $ # Open the application on you browser using you IPv4 Address on your browser i.e., only 2 routes available for auth /login ,/register
 $ # To find IPv4 Address
-   $ ipconfig ( windows )
-   $ ifconfig ( linux )
+$ # (Windows) ipconfig
+$ # (Unix/Mac) ifconfig
+```
+
+## ✨ Deploy on github workflow
+```bash
+$ # First set the git secrets using this https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository
+$ # Add the following keys to the secrets : HEROKU_APP_NAME , HEROKU_EMAIL , HEROKU_API_KEY
+$ # In the Dockerfile comment the line `CMD [ "uwsgi", "--socket", "0.0.0.0:5000", "--protocol", "http", "--wsgi", "run:app" ]`
+$ # Use the direct flask application run by uncommenting/adding the line `CMD [ "python", "run.py"]`
+$ # on push to the master/main the GH workflow will automatically create and push the image to your heroku
 ```
 
 ## ✨ Code-base structure
