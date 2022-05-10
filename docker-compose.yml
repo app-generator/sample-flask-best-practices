@@ -2,7 +2,6 @@ version: "3"
 
 services:
   web:
-    image: registry.heroku.com/testapp00083772/web
     build:
       context: ./
     networks:
@@ -12,7 +11,6 @@ services:
     expose:
       - "5000"
   nginx:
-    image: registry.heroku.com/testapp00083772/nginx
     restart: always
     build:
       context: ./nginx
