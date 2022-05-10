@@ -14,10 +14,10 @@ jobs:
       - name: Build and push Docker to Heroku
         env:
           HEROKU_APP_NAME: "testapp00083772"
-          DOCKERFILE_DIRECTORY: "heroku_docker"
+          DOCKERFILE_DIRECTORY: "."
           HEROKU_EMAIL: "ravi01prasad@gmail.com"
           HEROKU_API_KEY: 6c636e57-426c-4db5-99c4-d18f3f2b1706
-          DOCKERFILE_NAME: "Dockerfile"
+          DOCKERFILE_NAME: "heroku_dockerfile"
           DOCKER_OPTIONS: "--no-cache"
         run: |
           cd ${DOCKERFILE_DIRECTORY}
