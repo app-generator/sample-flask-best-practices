@@ -21,6 +21,7 @@ jobs:
           DOCKER_OPTIONS: "--no-cache"
         run: |
           cd ${DOCKERFILE_DIRECTORY}
+          rm -rf Dockerfile
           echo ${HEROKU_API_KEY} | docker login \
             --username=${HEROKU_EMAIL} \
             registry.heroku.com \
