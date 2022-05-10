@@ -17,11 +17,10 @@ jobs:
           DOCKERFILE_DIRECTORY: "."
           HEROKU_EMAIL: "ravi01prasad@gmail.com"
           HEROKU_API_KEY: 6c636e57-426c-4db5-99c4-d18f3f2b1706
-          DOCKERFILE_NAME: "heroku_dockerfile"
+          DOCKERFILE_NAME: "Dockerfile"
           DOCKER_OPTIONS: "--no-cache"
         run: |
           cd ${DOCKERFILE_DIRECTORY}
-          rm -rf ${DOCKERFILE_DIRECTORY}/Dockerfile
           echo ${HEROKU_API_KEY} | docker login \
             --username=${HEROKU_EMAIL} \
             registry.heroku.com \
