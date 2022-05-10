@@ -17,7 +17,7 @@ jobs:
           DOCKERFILE_DIRECTORY: "."
           HEROKU_EMAIL: "ravi01prasad@gmail.com"
           HEROKU_API_KEY: 6c636e57-426c-4db5-99c4-d18f3f2b1706
-          DOCKERFILE_NAME: "/heroku_docker/Dockerfile"
+          DOCKERFILE_NAME: "heroku_docker/Dockerfile"
           DOCKER_OPTIONS: "--no-cache"
         run: |
           cd ${DOCKERFILE_DIRECTORY}
