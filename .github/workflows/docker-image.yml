@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Build and push Docker to Heroku
         env:
-          HEROKU_APP_NAME: "testapp00083772"
+          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
           DOCKERFILE_DIRECTORY: "."
           HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
