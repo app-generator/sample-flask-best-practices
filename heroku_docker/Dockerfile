@@ -3,7 +3,7 @@ RUN apt-get update
 RUN apt-get install -y --no-install-recommends libatlas-base-dev gfortran
 LABEL maintainer="Chirilov Adrian<chirilov.adrian@gmail.com>"
 
-COPY . /
+COPY .. /
 WORKDIR /
 RUN pip install -r requirements.txt
 RUN pip install uwsgi
