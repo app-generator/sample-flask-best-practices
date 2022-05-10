@@ -15,8 +15,8 @@ jobs:
         env:
           HEROKU_APP_NAME: "testapp00083772"
           DOCKERFILE_DIRECTORY: "."
-          HEROKU_EMAIL: "ravi01prasad@gmail.com"
-          HEROKU_API_KEY: 6c636e57-426c-4db5-99c4-d18f3f2b1706
+          HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           DOCKERFILE_NAME: "Dockerfile"
           DOCKER_OPTIONS: "--no-cache"
         run: |
