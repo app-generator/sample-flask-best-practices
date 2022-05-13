@@ -1,1 +1,0 @@
-worker: uwsgi uwsgi.ini
