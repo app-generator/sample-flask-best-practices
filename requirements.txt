@@ -46,3 +46,4 @@ Werkzeug==2.1.1
 wrapt==1.14.0
 WTForms==3.0.1
 xxhash==3.0.0
+uwsgi
