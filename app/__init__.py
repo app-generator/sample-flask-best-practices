@@ -8,6 +8,7 @@ from flask_login import LoginManager
 from flask_bootstrap import Bootstrap5
 from flask_wtf.csrf import CSRFProtect
 from flask_sqlalchemy import SQLAlchemy
+from flask_assets import Environment, Bundle
 from app.setup_security import setup_security_measure_on_application
 
 # Setup Bootstrap5 on app
@@ -37,6 +38,7 @@ def create_app(config_name):
     """For to use dynamic environment"""
     global security
     app = Flask(__name__)
+    assets = Environment(app)
     app.config.from_object(config[config_name])
 
     bcrypt.init_app(app)
@@ -48,6 +50,14 @@ def create_app(config_name):
     mail.init_app(app)
     Minify(app=app, html=True, js=True, cssless=True)
     Session(app)
+    js = Bundle('custom_js/register_ps_check.js',
+                filters='jsmin',
+                output='js/packed.js')
+    assets.register('js_all', js)
+    scss = Bundle('custom_css/style.scss',
+                  filters='pyscss',
+                  output='css/packed.css')
+    assets.register('scss_all', scss)
 
     from app.auth.routes import auth
     app.register_blueprint(auth)

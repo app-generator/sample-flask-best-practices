@@ -6,7 +6,4 @@ LABEL maintainer="Chirilov Adrian<chirilov.adrian@gmail.com>"
 COPY . /
 WORKDIR /
 RUN pip install -r requirements.txt
-RUN pip install uwsgi
-CMD [ "uwsgi", "uwsgi_config.ini"]
-# CMD [ "python", "run.py"]
-# CMD [ "uwsgi", "--socket", "0.0.0.0:5000", "--protocol", "http", "--wsgi", "run:app" ]
+CMD [ "uwsgi", "--socket", "0.0.0.0:5000", "--protocol", "http", "--wsgi", "run:app" ]
