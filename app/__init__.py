@@ -50,10 +50,6 @@ def create_app(config_name):
     mail.init_app(app)
     Minify(app=app, html=True, js=True, cssless=True)
     Session(app)
-    js = Bundle('custom_js/register_ps_check.js',
-                filters='jsmin',
-                output='js/packed.js')
-    assets.register('js_all', js)
     scss = Bundle('custom_css/style.scss',
                   filters='pyscss',
                   output='css/packed.css')

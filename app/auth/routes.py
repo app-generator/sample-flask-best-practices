@@ -1,8 +1,7 @@
 from is_safe_url import is_safe_url
 from flask_login import login_user, logout_user, current_user
 from flask import Blueprint, render_template, request, flash, redirect, url_for, abort, session
-
-from app import bcrypt, db, security, login_manager
+from app import bcrypt, db, security, login_manager, config
 
 from app.auth.models import User
 from flask_talisman import Talisman, ALLOW_FROM
@@ -101,7 +100,10 @@ def register():
             return redirect(url_for('auth.register'))
         flash('Congrats, register success. You can log in now.', category='info')
         return redirect(url_for('auth.login'))
-    return render_template('auth/register.html', form=form)
+    return render_template('auth/register.html',
+                           form=form,
+                           min=config["base"].PASSWORD_CHECKER_MIN,
+                           max=config["base"].PASSWORD_CHECKER_MAX)
 
 @auth.route('/reset_password/<token>', methods=['GET', 'POST'])
 @security["talisman"](frame_options=ALLOW_FROM,

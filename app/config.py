@@ -47,6 +47,10 @@ class Config(object):
     SESSION_PERMANENT = False
     SESSION_TYPE = "filesystem"
 
+    # Password min/max
+    PASSWORD_CHECKER_MIN = 2
+    PASSWORD_CHECKER_MAX = 5
+
     @staticmethod
     def init_app(app):
         pass
@@ -78,6 +82,7 @@ class TestingConfig(Config):
 
 
 config = {
+    'base': Config,
     'development': DevelopmentConfig,
     'testing': TestingConfig,
     'production': ProductionConfig,

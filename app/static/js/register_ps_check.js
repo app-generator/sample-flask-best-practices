@@ -15,7 +15,8 @@ $('#password').password({
   animateSpeed: 'fast', // the above animation speed
   field: false, // select the match field (selector or jQuery instance) for better password checks
   fieldPartialMatch: true, // whether to check for partials in field
-  minimumLength: 4, // minimum password length (below this threshold, the score is 0)
+  minimumLength: parseInt(document.getElementById('psswd_min_len').textContent), // minimum password length (below this threshold, the score is 0)
+  maximumLength: parseInt(document.getElementById('psswd_max_len').textContent),
   useColorBarImage: true, // use the (old) colorbar image
   customColorBarRGB: {
     red: [0, 240],
