@@ -16,7 +16,7 @@ A simple `Flask` codebase that provides best practices for a secure production d
 | ✔️ | BS5 for styling | Local path (latest BS5 stable version) |
 | ✔️ | Simple Custom Login / Register pages | - | 
 | ✔️ | Password Recovery | - | 
-| ❌ | Unitary tests | - |
+| ✔️ | Unitary tests | - |
 | ✔️ | SCSS to CSS compilation | via pyScss |
 | ✔️ | Rate Limiter for Login & Register | via [Flask-RateLimiter](https://pypi.org/project/Flask-RateLimiter/) |
 | ✔️ | [Flask-Talisman](https://pypi.org/project/flask-talisman/) | Default policy |
