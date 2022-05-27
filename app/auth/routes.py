@@ -21,8 +21,8 @@ def load_user(user_id):
 
 @auth.route('/login',
             methods=['GET', 'POST'])
-@security["talisman"](frame_options=ALLOW_FROM,
-                      frame_options_allow_from='*')
+# @security["talisman"](frame_options=ALLOW_FROM,
+#                       frame_options_allow_from='*')
 def login():
     """
         This is the login route corresponding to the `/login` route,
@@ -71,8 +71,8 @@ def logout():
 
 @auth.route('/register',
             methods=['GET', 'POST'])
-@security["talisman"](frame_options=ALLOW_FROM,
-                      frame_options_allow_from='*')
+# @security["talisman"](frame_options=ALLOW_FROM,
+#                       frame_options_allow_from='*')
 def register():
     """
         This is the register route corresponding to the `/register` route,
@@ -106,8 +106,8 @@ def register():
                            max=config["base"].PASSWORD_CHECKER_MAX)
 
 @auth.route('/reset_password/<token>', methods=['GET', 'POST'])
-@security["talisman"](frame_options=ALLOW_FROM,
-                      frame_options_allow_from='*')
+# @security["talisman"](frame_options=ALLOW_FROM,
+#                       frame_options_allow_from='*')
 def reset_password(token):
     if current_user.is_authenticated:
         return redirect(url_for('main.index'))
@@ -121,8 +121,8 @@ def reset_password(token):
     return render_template('auth/reset_password.html', form=form)
 
 @auth.route('/send_reset_password_request', methods=['GET', 'POST'])
-@security["talisman"](frame_options=ALLOW_FROM,
-                      frame_options_allow_from='*')
+# @security["talisman"](frame_options=ALLOW_FROM,
+#                       frame_options_allow_from='*')
 def reset_password_request():
     if current_user.is_authenticated:
         return redirect(url_for('auth.login'))
