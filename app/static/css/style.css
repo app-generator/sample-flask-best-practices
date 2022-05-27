@@ -1,0 +1,12 @@
+$navbar-background-color: #274e68;
+$alert-message-background-color: lightcoral;
+
+.navbar-dark{
+    background-color: $navbar-background-color;
+}
+.psswd-vars{
+    display: none;
+}
+.alert{
+    background: $alert-message-background-color;
+}

@@ -12,5 +12,5 @@ def setup_security_measure_on_application(app):
     return {
         "limiter": Limiter(app,
                            key_func=get_remote_address,
-                           default_limits=app.config['RATE_LIMITER_OPTS']),
-        "talisman": Talisman(app)}
+                           default_limits=app.config['RATE_LIMITER_OPTS'])}
+        # "talisman": Talisman(app)}

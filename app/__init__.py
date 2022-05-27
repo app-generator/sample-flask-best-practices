@@ -23,7 +23,7 @@ db = SQLAlchemy()
 # Set up Flask-login
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
-login_manager.login_view = 'auth.signin'
+login_manager.login_view = 'auth.login'
 
 # Setup CSRF
 csrf = CSRFProtect()
@@ -54,6 +54,9 @@ def create_app(config_name):
                   filters='pyscss',
                   output='css/packed.css')
     assets.register('scss_all', scss)
+
+    from app.main.routes import main
+    app.register_blueprint(main)
 
     from app.auth.routes import auth
     app.register_blueprint(auth)
