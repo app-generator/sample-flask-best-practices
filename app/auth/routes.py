@@ -99,7 +99,7 @@ def register():
             flash('Email is not valid or does not exists.', category='danger')
             return redirect(url_for('auth.register'))
         flash('Congrats, register success. You can log in now.', category='info')
-        return redirect(url_for('auth.login'))
+        return redirect(url_for('main.index'))
     return render_template('auth/register.html',
                            form=form,
                            min=config["base"].PASSWORD_CHECKER_MIN,
